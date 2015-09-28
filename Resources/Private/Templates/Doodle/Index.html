@@ -1,17 +1,24 @@
-<f:if condition="{activePolls}">
-    <h1><f:translate key="label.activePolls"/></h1>
-    <ul class="customlist play-list">
-        <f:for each="{activePolls}" as="poll">
-            <li><f:render partial="PollItem" arguments="{poll: poll}"/></li>
-        </f:for>
-    </ul>
-</f:if>
+<div class="percent-two-third">
+    <f:if condition="{activePolls}">
+        <h1><f:translate key="label.activePolls"/></h1>
+        <ul class="customlist play-list">
+            <f:for each="{activePolls}" as="poll">
+                <li><f:render partial="PollItem" arguments="{poll: poll}"/></li>
+            </f:for>
+        </ul>
+    </f:if>
 
-<f:if condition="{inactivePolls}">
-    <h1><f:translate key="label.inactivePolls"/></h1>
-    <ul class="customlist play-list">
-        <f:for each="{inactivePolls}" as="poll">
-            <li><f:render partial="PollItem" arguments="{_all}"/></li>
-        </f:for>
-    </ul>
-</f:if>
+    <f:if condition="{inactivePolls}">
+        <h1><f:translate key="label.inactivePolls"/></h1>
+        <ul class="customlist play-list">
+            <f:for each="{inactivePolls}" as="poll">
+                <li><f:render partial="PollItem" arguments="{_all}"/></li>
+            </f:for>
+        </ul>
+    </f:if>
+
+</div>
+
+<div class="percent-one-third column-last widget">
+    <img src="{f:uri.resource(path:'Images/poll.png')}" alt="" />
+</div>
