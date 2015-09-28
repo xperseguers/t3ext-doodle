@@ -45,7 +45,7 @@ class DoodleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 		$settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['doodle']);
 		/** @var \Causal\DoodleClient\Client $doodleClient */
 		$doodleClient = GeneralUtility::makeInstance('Causal\\DoodleClient\\Client', $settings['username'], $settings['password']);
-		$cookiePath = PATH_site . 'typo3temp/doodle';
+		$cookiePath = PATH_site . 'typo3temp/doodle/';
 		if (!is_dir($cookiePath)) {
 			GeneralUtility::mkdir($cookiePath);
 		}
