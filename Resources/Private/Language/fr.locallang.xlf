@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file product-name="doodle" source-language="en" target_language="fr" datatype="plaintext" original="messages" date="2015-09-28T11:46:26Z">
+        <header />
+        <body>
+            <trans-unit id="label.activePolls">
+                <target>Sondages actuels</target>
+            </trans-unit>
+            <trans-unit id="label.inactivePolls">
+                <target>Anciens sondages</target>
+            </trans-unit>
+            <trans-unit id="label.participants">
+                <target>participant(s)</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

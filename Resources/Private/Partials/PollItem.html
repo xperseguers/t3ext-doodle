@@ -1,0 +1,12 @@
+{namespace d=Causal\Doodle\ViewHelpers}
+
+<f:link.external uri="{poll.publicUrl}">
+    <d:format.substring start="{settings.prefixTitle}">{poll.title}</d:format.substring>
+</f:link.external>
+
+<p style="font-size:80%; margin-left:25px">
+    {poll.participantsCount} <f:translate key="label.participants"/>
+
+    <f:link.external uri="{poll.exportExcelUrl}">Excel</f:link.external> |
+    <f:link.external uri="{poll.exportPdfUrl}">PDF</f:link.external>
+</p>

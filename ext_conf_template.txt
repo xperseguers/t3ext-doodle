@@ -1,0 +1,5 @@
+# cat=basic//10; type=string; label=Username: Your Doodle username.
+username =
+
+# cat=basic//20; type=string; label=Password: Your Doodle password.
+password =

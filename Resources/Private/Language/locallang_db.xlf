@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file product-name="doodle" source-language="en" datatype="plaintext" original="messages" date="2015-09-28T11:46:26Z">
+        <header />
+        <body>
+            <trans-unit id="flexform.prefixTitle">
+                <source>Filter polls with a given prefix in their title</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
