@@ -16,7 +16,7 @@ namespace Causal\Doodle\ViewHelpers\Format;
 
 /**
  * Class SubstringViewHelper
-
+ *
  * @category    ViewHelpers\Format
  * @package     doodle
  * @author      Xavier Perseguers <xavier@causal.ch>

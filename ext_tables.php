@@ -16,3 +16,6 @@ $TCA['tt_content']['types']['list']['subtypes_addlist'][$_EXTKEY . '_doodle'] = 
 
 // Register the static TypoScript
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Doodle');
+
+// Hook into "Flush general caches"
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][] = 'Causal\\Doodle\\Hooks\\DataHandler->clearCacheCmd';
