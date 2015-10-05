@@ -16,6 +16,7 @@ namespace Causal\Doodle\Controller;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Causal\Doodle\Domain\Repository\PollRepository;
+use Causal\Doodle\Utility\DoodleUtility;
 use Causal\DoodleClient\Domain\Model\Poll;
 
 /**
@@ -42,27 +43,11 @@ class DoodleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     /**
      * Injects a poll repository.
      *
-     * @param \Causal\Doodle\PollRepository $pollRepository
      * @return void
      */
-    public function injectPollRepository(PollRepository $pollRepository)
+    public function injectPollRepository()
     {
-        $settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['doodle']);
-        /** @var \Causal\DoodleClient\Client $doodleClient */
-        $doodleClient = GeneralUtility::makeInstance('Causal\\DoodleClient\\Client', $settings['username'], $settings['password']);
-        $cookiePath = PATH_site . 'typo3temp/tx_doodle/';
-        if (!is_dir($cookiePath)) {
-            GeneralUtility::mkdir($cookiePath);
-        }
-        if (!is_file($cookiePath . '/.htaccess')) {
-            GeneralUtility::writeFile($cookiePath . '/.htaccess', 'Deny from all');
-        }
-        $doodleClient
-            ->setCookiePath($cookiePath)
-            ->connect();
-
-        $pollRepository->setDoodleClient($doodleClient);
-        $this->pollRepository = $pollRepository;
+        $this->pollRepository = DoodleUtility::initializePollRepository();
     }
 
     /**

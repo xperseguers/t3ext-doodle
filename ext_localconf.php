@@ -14,3 +14,5 @@ require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKE
         'Doodle' => 'index',
     )
 );
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerTypeConverter('Causal\\Doodle\\Property\\TypeConverter\\PollConverter');

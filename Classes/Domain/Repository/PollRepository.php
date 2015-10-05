@@ -59,6 +59,24 @@ class PollRepository
     }
 
     /**
+     * Finds a personal poll by its id.
+     *
+     * @param string $id
+     * @return \Causal\DoodleClient\Domain\Model\Poll
+     */
+    public function findById($id)
+    {
+        // TODO: This may certainly be optimized by extending the client to fetch a single poll
+        $polls = $this->findAll();
+        foreach ($polls as $poll) {
+            if ($poll->getId() === $id) {
+                return $poll;
+            }
+        }
+        return null;
+    }
+
+    /**
      * Returns personal polls filtered by state.
      *
      * @param string $state One of the \Causal\DoodleClient\Domain\Model\Poll::STATE_* constants
