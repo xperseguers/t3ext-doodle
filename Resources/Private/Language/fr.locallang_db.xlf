@@ -3,8 +3,20 @@
     <file product-name="doodle" source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2015-09-28T11:46:26Z">
         <header />
         <body>
+            <trans-unit id="flexform.mode">
+                <target>Mode :</target>
+            </trans-unit>
+            <trans-unit id="flexform.mode.ALL">
+                <target>Tous les sondages</target>
+            </trans-unit>
+            <trans-unit id="flexform.mode.ACTIVE">
+                <target>Seulement les sondages actuels</target>
+            </trans-unit>
+            <trans-unit id="flexform.mode.INACTIVE">
+                <target>Seulement les anciens sondages</target>
+            </trans-unit>
             <trans-unit id="flexform.prefixTitle">
-                <target>Filtrer les sondages selon un préfixe dans leur titre</target>
+                <target>Filtrer les sondages selon un préfixe dans leur titre :</target>
             </trans-unit>
         </body>
     </file>

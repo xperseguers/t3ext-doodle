@@ -3,8 +3,20 @@
     <file product-name="doodle" source-language="en" datatype="plaintext" original="messages" date="2015-09-28T11:46:26Z">
         <header />
         <body>
+            <trans-unit id="flexform.mode">
+                <source>Mode:</source>
+            </trans-unit>
+            <trans-unit id="flexform.mode.ALL">
+                <source>All polls</source>
+            </trans-unit>
+            <trans-unit id="flexform.mode.ACTIVE">
+                <source>Only active polls</source>
+            </trans-unit>
+            <trans-unit id="flexform.mode.INACTIVE">
+                <source>Only inactive polls</source>
+            </trans-unit>
             <trans-unit id="flexform.prefixTitle">
-                <source>Filter polls with a given prefix in their title</source>
+                <source>Filter polls with a given prefix in their title:</source>
             </trans-unit>
         </body>
     </file>

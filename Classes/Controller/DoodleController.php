@@ -27,58 +27,67 @@ use Causal\DoodleClient\Domain\Model\Poll;
  * @copyright   2015 Causal Sàrl
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
-class DoodleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class DoodleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
 
-	/**
-	 * @var PollRepository
-	 */
-	protected $pollRepository;
+    const MODE_ALL = 'ALL';
+    const MODE_ACTIVE = 'ACTIVE';
+    const MODE_INACTIVE = 'INACTIVE';
 
-	/**
-	 * Injects a poll repository.
-	 *
-	 * @param \Causal\Doodle\PollRepository $pollRepository
-	 * @return void
-	 */
-	public function injectPollRepository(PollRepository $pollRepository)
-	{
-		$settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['doodle']);
-		/** @var \Causal\DoodleClient\Client $doodleClient */
-		$doodleClient = GeneralUtility::makeInstance('Causal\\DoodleClient\\Client', $settings['username'], $settings['password']);
-		$cookiePath = PATH_site . 'typo3temp/doodle/';
-		if (!is_dir($cookiePath)) {
-			GeneralUtility::mkdir($cookiePath);
-		}
-		if (!is_file($cookiePath . '/.htaccess')) {
-			GeneralUtility::writeFile($cookiePath . '/.htaccess', 'Deny from all');
-		}
-		$doodleClient
-			->setCookiePath($cookiePath)
-			->connect();
+    /**
+     * @var PollRepository
+     */
+    protected $pollRepository;
 
-		$pollRepository->setDoodleClient($doodleClient);
-		$this->pollRepository = $pollRepository;
-	}
+    /**
+     * Injects a poll repository.
+     *
+     * @param \Causal\Doodle\PollRepository $pollRepository
+     * @return void
+     */
+    public function injectPollRepository(PollRepository $pollRepository)
+    {
+        $settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['doodle']);
+        /** @var \Causal\DoodleClient\Client $doodleClient */
+        $doodleClient = GeneralUtility::makeInstance('Causal\\DoodleClient\\Client', $settings['username'], $settings['password']);
+        $cookiePath = PATH_site . 'typo3temp/tx_doodle/';
+        if (!is_dir($cookiePath)) {
+            GeneralUtility::mkdir($cookiePath);
+        }
+        if (!is_file($cookiePath . '/.htaccess')) {
+            GeneralUtility::writeFile($cookiePath . '/.htaccess', 'Deny from all');
+        }
+        $doodleClient
+            ->setCookiePath($cookiePath)
+            ->connect();
 
-	/**
-	 * Index action.
-	 *
-	 * @return string
-	 */
-	public function indexAction()
-	{
-		$activePolls = $this->pollRepository->findByState(Poll::STATE_OPEN);
-		$inactivePolls = $this->pollRepository->findByState(Poll::STATE_CLOSED);
+        $pollRepository->setDoodleClient($doodleClient);
+        $this->pollRepository = $pollRepository;
+    }
 
-		if (!empty($this->settings['prefixTitle'])) {
-			$activePolls = $this->pollRepository->filterByPrefixInTitle($activePolls, $this->settings['prefixTitle']);
-			$inactivePolls = $this->pollRepository->filterByPrefixInTitle($inactivePolls, $this->settings['prefixTitle']);
-		}
+    /**
+     * Index action.
+     *
+     * @return string
+     */
+    public function indexAction()
+    {
+        $activePolls = $this->settings['mode'] === static::MODE_ALL || $this->settings['mode'] === static::MODE_ACTIVE
+            ? $this->pollRepository->findByState(Poll::STATE_OPEN)
+            : array();
+        $inactivePolls = $this->settings['mode'] === static::MODE_ALL || $this->settings['mode'] === static::MODE_INACTIVE
+            ? $this->pollRepository->findByState(Poll::STATE_CLOSED)
+            : array();
 
-		$this->view->assignMultiple(array(
-			'activePolls' => $activePolls,
-			'inactivePolls' => $inactivePolls,
-		));
-	}
+        if (!empty($this->settings['prefixTitle'])) {
+            $activePolls = $this->pollRepository->filterByPrefixInTitle($activePolls, $this->settings['prefixTitle']);
+            $inactivePolls = $this->pollRepository->filterByPrefixInTitle($inactivePolls, $this->settings['prefixTitle']);
+        }
+
+        $this->view->assignMultiple(array(
+            'activePolls' => $activePolls,
+            'inactivePolls' => $inactivePolls,
+        ));
+    }
 
 }
