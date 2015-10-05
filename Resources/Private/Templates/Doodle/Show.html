@@ -1,0 +1,12 @@
+<h1>{poll.title}</h1>
+
+<ul>
+    <li>
+        <f:link.external uri="{poll.publicUrl}"><f:translate key="action.openOnDoodle"/></f:link.external>
+    </li>
+    <li>
+        <f:link.action action="index"><f:translate key="action.backToList"/></f:link.action>
+    </li>
+</ul>
+
+<f:render partial="Participants" arguments="{poll: poll}"/>

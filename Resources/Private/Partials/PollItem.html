@@ -8,5 +8,6 @@
     {poll.participantsCount} <f:translate key="label.participants"/>
 
     <f:link.external uri="{poll.exportExcelUrl}">Excel</f:link.external> |
-    <f:link.external uri="{poll.exportPdfUrl}">PDF</f:link.external>
+    <f:link.external uri="{poll.exportPdfUrl}">PDF</f:link.external> |
+    <f:link.action action="show" arguments="{poll: poll.id}"><f:translate key="action.detail"/></f:link.action>
 </p>

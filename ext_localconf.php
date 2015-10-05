@@ -7,11 +7,11 @@ require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKE
     'Causal.' . $_EXTKEY,
     'Doodle',
     array(
-        'Doodle' => 'index',
+        'Doodle' => 'index,show',
     ),
     // non-cacheable actions
     array(
-        'Doodle' => 'index',
+        'Doodle' => 'index,show',
     )
 );
 

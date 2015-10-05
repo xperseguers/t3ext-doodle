@@ -12,6 +12,21 @@
             <trans-unit id="label.participants">
                 <target>participant(s)</target>
             </trans-unit>
+            <trans-unit id="preference.yes">
+                <target>Oui</target>
+            </trans-unit>
+            <trans-unit id="preference.ifNeeded">
+                <target>Si nécessaire</target>
+            </trans-unit>
+            <trans-unit id="action.detail">
+                <target>Détails</target>
+            </trans-unit>
+            <trans-unit id="action.backToList">
+                <target>Retour à la liste des sondages</target>
+            </trans-unit>
+            <trans-unit id="action.openOnDoodle">
+                <target>Ouvrir le sondage sur doodle.com</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

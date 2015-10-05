@@ -12,6 +12,21 @@
             <trans-unit id="label.participants">
                 <source>participant(s)</source>
             </trans-unit>
+            <trans-unit id="preference.yes">
+                <source>Yes</source>
+            </trans-unit>
+            <trans-unit id="preference.ifNeeded">
+                <source>If needed</source>
+            </trans-unit>
+            <trans-unit id="action.detail">
+                <source>Detail</source>
+            </trans-unit>
+            <trans-unit id="action.backToList">
+                <source>Back to the list of polls</source>
+            </trans-unit>
+            <trans-unit id="action.openOnDoodle">
+                <source>Open poll on doodle.com</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

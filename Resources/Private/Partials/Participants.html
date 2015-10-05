@@ -1,0 +1,37 @@
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <f:for each="{poll.options}" as="option">
+                <th>{option}</th>
+            </f:for>
+        </tr>
+    </thead>
+    <tbody>
+        <f:for each="{poll.participants}" as="participant">
+            <tr>
+                <td>{participant.name}</td>
+                <f:for each="{participant.preferences}" as="preference">
+                    <f:switch expression="{preference}">
+                        <f:case value="y">
+                            <td style="background-color:#d1f3d1">
+                                <f:translate key="preference.yes"/>
+                            </td>
+                        </f:case>
+                        <f:case value="n">
+                            <td style="background-color:#ffccca"></td>
+                        </f:case>
+                        <f:case value="i">
+                            <td style="background-color:#ffeda1">
+                                <f:translate key="preference.ifNeeded"/>
+                            </td>
+                        </f:case>
+                        <f:case default="true">
+                            <td style="background-color:#eaeaea">?</td>
+                        </f:case>
+                    </f:switch>
+                </f:for>
+            </tr>
+        </f:for>
+    </tbody>
+</table>

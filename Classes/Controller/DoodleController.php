@@ -45,7 +45,7 @@ class DoodleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      *
      * @return void
      */
-    public function injectPollRepository()
+    public function initializeAction()
     {
         $this->pollRepository = DoodleUtility::initializePollRepository();
     }
@@ -73,6 +73,17 @@ class DoodleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
             'activePolls' => $activePolls,
             'inactivePolls' => $inactivePolls,
         ));
+    }
+
+    /**
+     * Shows a single poll.
+     *
+     * @param Poll $poll
+     * @return void
+     */
+    public function showAction(Poll $poll)
+    {
+        $this->view->assign('poll', $poll);
     }
 
 }
