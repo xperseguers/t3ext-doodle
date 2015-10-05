@@ -1,0 +1,7 @@
+plugin.tx_doodle {
+	view {
+		templateRootPath = {$plugin.tx_doodle.view.templateRootPath}
+		partialRootPath = {$plugin.tx_doodle.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_doodle.view.layoutRootPath}
+	}
+}
