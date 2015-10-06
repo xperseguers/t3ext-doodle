@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a256a8f788c2ad7f4c623ba9182aae21",
-    "content-hash": "ea700f38abe724d1cbaeeb469b1cbe82",
+    "hash": "c543e370435d605fc516a949a7720d86",
+    "content-hash": "09edd3185f249574ceb1086da6218970",
     "packages": [
         {
             "name": "causal/doodle_client",
-            "version": "0.1.2",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xperseguers/doodle_client.git",
-                "reference": "94bbb937f6f9f2f4664faa0d489ced06eb6270c2"
+                "reference": "beef78b6f8c2eef61fae254987af9817cd82c057"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xperseguers/doodle_client/zipball/94bbb937f6f9f2f4664faa0d489ced06eb6270c2",
-                "reference": "94bbb937f6f9f2f4664faa0d489ced06eb6270c2",
+                "url": "https://api.github.com/repos/xperseguers/doodle_client/zipball/beef78b6f8c2eef61fae254987af9817cd82c057",
+                "reference": "beef78b6f8c2eef61fae254987af9817cd82c057",
                 "shasum": ""
             },
             "require": {
@@ -54,7 +54,7 @@
             "keywords": [
                 "doodle"
             ],
-            "time": "2015-10-01 14:01:21"
+            "time": "2015-10-02 10:43:53"
         }
     ],
     "packages-dev": [],
