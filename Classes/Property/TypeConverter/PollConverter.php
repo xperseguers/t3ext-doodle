@@ -1,6 +1,4 @@
 <?php
-namespace Causal\Doodle\Property\TypeConverter;
-
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -13,6 +11,8 @@ namespace Causal\Doodle\Property\TypeConverter;
  *
  * The TYPO3 project - inspiring people to share!
  */
+
+namespace Causal\Doodle\Property\TypeConverter;
 
 use TYPO3\CMS\Extbase\Property\PropertyMappingConfigurationInterface;
 use TYPO3\CMS\Extbase\Property\TypeConverter\AbstractTypeConverter;

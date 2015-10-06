@@ -1,6 +1,4 @@
 <?php
-namespace Causal\Doodle\Utility;
-
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -13,6 +11,8 @@ namespace Causal\Doodle\Utility;
  *
  * The TYPO3 project - inspiring people to share!
  */
+
+namespace Causal\Doodle\Utility;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Causal\Doodle\Domain\Repository\PollRepository;

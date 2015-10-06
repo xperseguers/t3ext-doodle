@@ -1,6 +1,4 @@
 <?php
-namespace Causal\Doodle\ViewHelpers\Format;
-
 /*
  * This file is part of the TYPO3 CMS project.
  *
@@ -13,6 +11,8 @@ namespace Causal\Doodle\ViewHelpers\Format;
  *
  * The TYPO3 project - inspiring people to share!
  */
+
+namespace Causal\Doodle\ViewHelpers\Format;
 
 /**
  * Class SubstringViewHelper
