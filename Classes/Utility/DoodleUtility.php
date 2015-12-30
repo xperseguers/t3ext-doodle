@@ -23,7 +23,7 @@ use Causal\Doodle\Domain\Repository\PollRepository;
  * @category    Utility
  * @package     doodle
  * @author      Xavier Perseguers <xavier@causal.ch>
- * @copyright   2015 Causal Sàrl
+ * @copyright   2015-2016 Causal Sàrl
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
 class DoodleUtility
