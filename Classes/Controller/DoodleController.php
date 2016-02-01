@@ -57,12 +57,24 @@ class DoodleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     public function indexAction()
     {
-        $activePolls = $this->settings['mode'] === static::MODE_ALL || $this->settings['mode'] === static::MODE_ACTIVE
-            ? $this->pollRepository->findByState(Poll::STATE_OPEN)
-            : array();
-        $inactivePolls = $this->settings['mode'] === static::MODE_ALL || $this->settings['mode'] === static::MODE_INACTIVE
-            ? $this->pollRepository->findByState(Poll::STATE_CLOSED)
-            : array();
+        for ($i = 0; $i < 2; $i++) {
+            try {
+                $activePolls = $this->settings['mode'] === static::MODE_ALL || $this->settings['mode'] === static::MODE_ACTIVE
+                    ? $this->pollRepository->findByState(Poll::STATE_OPEN)
+                    : array();
+                $inactivePolls = $this->settings['mode'] === static::MODE_ALL || $this->settings['mode'] === static::MODE_INACTIVE
+                    ? $this->pollRepository->findByState(Poll::STATE_CLOSED)
+                    : array();
+                break;
+            } catch (\Causal\DoodleClient\Exception\UnauthenticatedException $e) {
+                if ($this->pollRepository->getDoodleClient()->disconnect()) {
+                    $this->pollRepository->getDoodleClient()->connect();
+                }
+                $activePolls = array();
+                $inactivePolls = array();
+            }
+        }
+
 
         if (!empty($this->settings['prefixTitle'])) {
             $activePolls = $this->pollRepository->filterByPrefixInTitle($activePolls, $this->settings['prefixTitle']);

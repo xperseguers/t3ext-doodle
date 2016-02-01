@@ -20,13 +20,12 @@
     }
   ],
   "license": "GPL-3.0+",
-  "homepage": "https://github.com/xperseguers/doodle_client",
   "keywords": [
     "doodle"
   ],
   "require": {
-    "php": ">= 5.3.3, <= 5.6.99",
-    "causal/doodle_client": "~0.2"
+    "php": ">= 5.3.3, <= 7.0.99",
+    "causal/doodle_client": "~0.3"
   },
   "autoload": {
     "psr-4": {
@@ -39,7 +38,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.1.x-dev"
+      "dev-master": "0.2.x-dev"
     }
   }
 }

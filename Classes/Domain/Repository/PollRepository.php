@@ -34,6 +34,16 @@ class PollRepository
     protected $doodleClient;
 
     /**
+     * Returns the doodle client.
+     *
+     * @return \Causal\DoodleClient\Client
+     */
+    public function getDoodleClient()
+    {
+        return $this->doodleClient;
+    }
+
+    /**
      * Sets the doodle client.
      *
      * @param \Causal\DoodleClient\Client $doodleClient
