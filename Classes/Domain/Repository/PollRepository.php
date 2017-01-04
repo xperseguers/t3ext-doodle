@@ -22,8 +22,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @category    Domain\Repository
  * @package     doodle
  * @author      Xavier Perseguers <xavier@causal.ch>
- * @copyright   2015-2016 Causal Sàrl
- * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
+ * @copyright   2015-2017 Causal Sàrl
+ * @license     https://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
 class PollRepository
 {
