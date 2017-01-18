@@ -4,7 +4,7 @@
 Doodle for TYPO3
 ================
 
-This extension integrates polls created on Doodle (http://doodle.com) within a TYPO3 website.
+This extension integrates polls created on Doodle (https://doodle.com) within a TYPO3 website.
 
 The underlying API lets you fetch available polls including their metadata, their participants and corresponding
 answers/preferences.
@@ -40,7 +40,7 @@ then into a basic TYPO3 extension skeleton to get this project.
 Restrictions
 ============
 
-Please be aware of Doodle's `Terms of Service <http://doodle.com/en_GB/terms-of-service>`__. Particularly, by using this
+Please be aware of Doodle's `Terms of Service <https://doodle.com/en_GB/terms-of-service>`__. Particularly, by using this
 extension, you understand that you are *potentially* not fully complying with those terms of service (or maybe even not
 at all) and that this extension should most probably only be used by authenticated users on your website; so that you do
 not duplicate Doodle's features "publicly".
