@@ -1,0 +1,70 @@
+{
+  "name": "causal/doodle",
+  "type": "typo3-cms-extension",
+  "description": "Integrates Doodle (https://doodle.com) with TYPO3.",
+  "keywords": [
+    "TYPO3 CMS",
+    "Doodle",
+    "Poll"
+  ],
+  "homepage": "https://github.com/xperseguers/t3ext-doodle",
+  "support": {
+    "issues": "https://github.com/xperseguers/t3ext-doodle/issues"
+  },
+  "authors": [
+    {
+      "name": "Xavier Perseguers",
+      "email": "xavier@causal.ch",
+      "homepage": "https://www.causal.ch",
+      "role": "Developer"
+    }
+  ],
+  "license": "GPL-3.0+",
+  "require": {
+    "php": "^7.0",
+    "causal/doodle_client": "^0.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Causal\\Doodle\\": "Classes/"
+    }
+  },
+  "replace": {
+    "doodle": "self.version",
+    "typo3-ter/doodle": "self.version"
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/Web/typo3conf/ext/",
+      "[ -L .Build/Web/typo3conf/ext/doodle ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/doodle"
+    ],
+    "extension-create-libs": [
+      "mkdir -p Libraries/temp",
+      "[ -f $HOME/.composer/vendor/bin/phar-composer ] || composer global require clue/phar-composer",
+      "if [ ! -f Libraries/causal-doodle-client.phar ]; then cd Libraries/temp && composer require causal/doodle_client=^0.5.0 && composer config classmap-authoritative true && composer config prepend-autoloader false && composer dump-autoload; fi",
+      "[ -f Libraries/causal-doodle-client.phar ] || $HOME/.composer/vendor/bin/phar-composer build Libraries/temp/ Libraries/causal-doodle-client.phar",
+      "chmod -x Libraries/*.phar",
+      "rm -rf Libraries/temp"
+    ],
+    "extension-build": [
+      "@extension-create-libs"
+    ],
+    "extension-release": [
+      "@extension-build",
+      "rm -rf Tests/",
+      "rm .gitignore"
+    ],
+    "extension-clean": [
+      "rm -rf Libraries"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.5.x-dev"
+    }
+  }
+}

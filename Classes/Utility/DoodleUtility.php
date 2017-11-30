@@ -37,8 +37,9 @@ class DoodleUtility
     public static function initializePollRepository()
     {
         $settings = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['doodle']);
+
         /** @var \Causal\DoodleClient\Client $doodleClient */
-        $doodleClient = GeneralUtility::makeInstance('Causal\\DoodleClient\\Client', $settings['username'], $settings['password']);
+        $doodleClient = GeneralUtility::makeInstance(\Causal\DoodleClient\Client::class, $settings['username'], $settings['password']);
         $cookiePath = PATH_site . 'typo3temp/tx_doodle/';
         if (!is_dir($cookiePath)) {
             GeneralUtility::mkdir($cookiePath);
@@ -51,7 +52,7 @@ class DoodleUtility
             ->connect();
 
         /** @var \Causal\Doodle\Domain\Repository\PollRepository $pollRepository */
-        $pollRepository = GeneralUtility::makeInstance('Causal\\Doodle\\Domain\\Repository\\PollRepository');
+        $pollRepository = GeneralUtility::makeInstance(\Causal\Doodle\Domain\Repository\PollRepository::class);
         $pollRepository->setDoodleClient($doodleClient);
 
         return $pollRepository;

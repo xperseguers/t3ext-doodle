@@ -59,7 +59,7 @@ Either install as usual from TER or manually by cloning the Git project:
 
     $ cd /path/to/website/typo3conf/ext/
     $ git clone https://github.com/xperseguers/t3ext-doodle.git doodle
-    $ cd doodle/Classes/
+    $ cd doodle/
     $ composer install
 
 

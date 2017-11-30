@@ -4,25 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "07f8ee76bcfe5dd6ab79c590f0ce9daf",
-    "content-hash": "3a4472504f1479a34d1e8da28b37e20e",
+    "content-hash": "2d3b2155e263d1417f1c83d295343117",
     "packages": [
         {
             "name": "causal/doodle_client",
-            "version": "0.4.0",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xperseguers/doodle_client.git",
-                "reference": "aa0e19e752dd7f3040f8b9c981fa47db33f7e7dc"
+                "reference": "5ad422023d3d599631e908c852ef04fb7afa7087"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xperseguers/doodle_client/zipball/aa0e19e752dd7f3040f8b9c981fa47db33f7e7dc",
-                "reference": "aa0e19e752dd7f3040f8b9c981fa47db33f7e7dc",
+                "url": "https://api.github.com/repos/xperseguers/doodle_client/zipball/5ad422023d3d599631e908c852ef04fb7afa7087",
+                "reference": "5ad422023d3d599631e908c852ef04fb7afa7087",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3,<8.0-DEV"
+                "php": "^7.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -30,7 +29,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4.x-dev"
+                    "dev-master": "0.5.x-dev"
                 }
             },
             "autoload": {
@@ -54,7 +53,7 @@
             "keywords": [
                 "doodle"
             ],
-            "time": "2017-01-18 07:28:26"
+            "time": "2017-11-30T10:37:38+00:00"
         }
     ],
     "packages-dev": [],
@@ -64,7 +63,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">= 5.3.3, <= 7.1.99"
+        "php": "^7.0"
     },
     "platform-dev": []
 }
