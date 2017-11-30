@@ -13,15 +13,15 @@
                 <td>{participant.name}</td>
                 <f:for each="{participant.preferences}" as="preference">
                     <f:switch expression="{preference}">
-                        <f:case value="y">
+                        <f:case value="0">
+                            <td style="background-color:#ffccca"></td>
+                        </f:case>
+                        <f:case value="1">
                             <td style="background-color:#d1f3d1">
                                 <f:translate key="preference.yes"/>
                             </td>
                         </f:case>
-                        <f:case value="n">
-                            <td style="background-color:#ffccca"></td>
-                        </f:case>
-                        <f:case value="i">
+                        <f:case value="2">
                             <td style="background-color:#ffeda1">
                                 <f:translate key="preference.ifNeeded"/>
                             </td>

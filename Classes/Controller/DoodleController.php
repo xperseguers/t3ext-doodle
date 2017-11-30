@@ -75,7 +75,6 @@ class DoodleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
             }
         }
 
-
         if (!empty($this->settings['prefixTitle'])) {
             $activePolls = $this->pollRepository->filterByPrefixInTitle($activePolls, $this->settings['prefixTitle']);
             $inactivePolls = $this->pollRepository->filterByPrefixInTitle($inactivePolls, $this->settings['prefixTitle']);
