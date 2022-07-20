@@ -10,7 +10,7 @@
  * writing. "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF[$_EXTKEY] = [
     'title' => 'Doodle',
     'description' => 'Integrates Doodle (https://doodle.com) with TYPO3.',
     'category' => 'fe',
@@ -30,14 +30,14 @@ $EM_CONF[$_EXTKEY] = array(
     'clearCacheOnLoad' => 0,
     'lockType' => '',
     'version' => '0.5.0',
-    'constraints' => array(
-        'depends' => array(
-            'php' => '7.0.0-7.2.99',
-            'typo3' => '7.6.0-8.7.99',
-        ),
-        'conflicts' => array(),
-        'suggests' => array(),
-    ),
+    'constraints' => [
+        'depends' => [
+            'php' => '7.0.0-7.4.99',
+            'typo3' => '7.6.0-10.4.99',
+        ],
+        'conflicts' => [],
+        'suggests' => [],
+    ],
     '_md5_values_when_last_written' => '',
-    'suggests' => array(),
-);
+    'suggests' => [],
+];
